@@ -12,8 +12,8 @@ read.ncdf.arpaer <- function(con=NULL, pollutant="pm10", lev=1,
   } else {                    ## ncdf object
     nc <- con
   }
-  lon  <- get.var.ncdf(nc,varid="lon")
-  lat  <- get.var.ncdf(nc,varid="lat")
+  lon  <- ncvar_get(nc,varid="lon")
+  lat  <- ncvar_get(nc,varid="lat")
   Time <- as.POSIXct(get.var.ncdf(nc,varid="Times"), 
                      format="%Y-%m-%d_%H:%M:%S", tz=tz.in)
   Time <- tz.change(x=Time,tz.in=tz.in,tz.out=tz.out)
@@ -28,7 +28,7 @@ read.ncdf.arpaer <- function(con=NULL, pollutant="pm10", lev=1,
     stop(paste(pollutant,"must have dimensions X-Y-Z-T or X-Y-T"))
   }
   if (class(con)!="ncdf") {
-    close.ncdf(nc)
+    nc_close(nc)
   }
   coords <- ll2utm.grid(lat,lon)
   Coords <- list(x=matrix(coords$x,nrow=nrow(lon),ncol=ncol(lon)),
