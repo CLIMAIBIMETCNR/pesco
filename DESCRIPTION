@@ -1,10 +1,10 @@
 Package: pesco
 Type: Package
 Title: Data fusion for air quality data
-Version: 0.3.1
+Version: 0.3.2
 Date: 2016-10-04
 Author: Lucia Paci, Giovanni Bonafe'
 Maintainer: G.Bonafe' <gbonafe@arpa.emr.it>
 Imports: geoR, akima, fields, caTools, ncdf4, timeDate, chron
-Description: PESCO stands for Post-processing and Evaluation with Statistical methods of a Chemistry-transport-model Output. The package provides functions to perform data fusion for air quality data, correcting the output of a deterministic CTM with observed data, with a Trans-Gaussian Kriging approach.
+Description: PESCO stands for Post-processing and Evaluation with Statistical methods of a Chemistry-transport-model Output. Patched by LaMMMA Francesca Guarnieri for R 3.5.2 .The package provides functions to perform data fusion for air quality data, correcting the output of a deterministic CTM with observed data, with a Trans-Gaussian Kriging approach.
 License: GPL-2
